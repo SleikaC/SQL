@@ -154,8 +154,60 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+    
 
-    jh
+    ~ In this SQL i'm retrieving data about customers and their order using a database that has multiple tables
+
+    1- How many products were sold in January?
+    
+SELECT COUNT (orderID)
+FROM JanSales
+WHERE lenght (orderID)=6
+ AND orderID <>'order id';
+
+    2-How many of those orders were an iPhone?
+    
+SELECT COUNT(orderid)
+FROM JanSales
+WHERE product= iPhone
+AND lenght(orderid)= 6
+AND orderid <> 'orderid';
+
+ 3-Select the customer account numbers for all the orders that were placed in February.
+ 
+SELECT distinct acctnum
+FROM customers
+INNER JOIN FebSales
+ON customers.order_id=FebSales.orderID;
+
+ 4-Which product was the cheapest one sold in January, and what was the price?
+ 
+SELECT distinct Product, price
+FROM JanSales
+WHERE price in (SELECT MIN (price) FROM JanSales);
+
+ 5-What is the total revenue for each product sold in January? 
+ 
+SELECT SUM (Quantity)*price as revenue,product
+FROM JanSales
+GROUP BY Product;
+
+ 6-Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
+ 
+SELECT SUM (quantity),Product,SUM (quantity)*price as revenue
+FROM FebSales
+WHERE location = '548 Lincoln St,Seattle, WA 98191'
+GROUP BY  Product;
+
+7-How many customers ordered more than 2 products at a time in February, and what was the average amount spent for those customers?
+
+SELECT COUNT (customers.acctnum),AVG (quantity *price)
+FROM FebSales
+LEFT JOIN customers
+ON FebSales.orderID = customers.order_id
+WHERE FebSales.Quantity>2;
+    
+    
 
     
 
