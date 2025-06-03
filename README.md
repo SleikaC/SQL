@@ -254,7 +254,7 @@ SELECT SUM (quantity*price), Product
 FROM  JanSales
 GROUP BY product
 ORDER BY SUM (quantity*price) desc
-LIMIT 1;  
+LIMIT 1;   
     
     
 
