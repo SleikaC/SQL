@@ -31,3 +31,15 @@ VALUES
 #Selecting all the product name to know my options
 SELECT product_name
 FROM bank_products;
+#uses OR to show the product names that have a Checking OR Savings product type
+SELECT product_name
+FROM bank_products
+WHERE product_type = "Checking"
+OR product_type = "Saving";
+
+#uses AND to show the product names that have a "Savings" product type AND have an interest_rate of at least 0.75, AND have no monthly fee
+SELECT product_name,interest_rate
+FROM bank_products
+WHERE product_type="Saving"
+AND interest_rate>=0.75
+AND monthly_fee=0;
