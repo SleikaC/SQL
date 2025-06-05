@@ -1,0 +1,10 @@
+# BANK DATABASE
+
+CREATE TABLE bank_products (
+    product_id INTEGER PRIMARY KEY,
+    product_name TEXT,
+    product_type TEXT,
+    interest_rate DECIMAL(5, 2),
+    monthly_fee DECIMAL(6, 2),
+    minimum_balance DECIMAL(10, 2)
+);
