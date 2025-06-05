@@ -106,3 +106,27 @@ FROM FebSales
 LEFT JOIN customers
 ON FebSales.orderID = customers.order_id
 WHERE FebSales.Quantity>2;
+
+8-List all the products sold in Los Angeles in February, and include how many of each were sold
+SELECT Product, SUM(quantity) 
+FROM FebSales
+WHERE location LIKE '%Los Angeles%'
+GROUP BY Product;
+
+9- Which locations in New York received at least 3 orders in January, and how many orders did they each receive?
+
+SELECT location, COUNT (orderID)
+FROM JanSales
+WHERE location LIKE '%NY%'
+AND length (orderID)=6
+AND orderID <> 'Order ID'
+GROUP BY location 
+HAVING COUNT (orderID)>2;
+
+10- How many of each type of headphone were sold in February?
+
+SELECT Product, SUM (Quantity) as Quantity
+FROM FebSales
+WHERE Product LIKE '%headphone%'
+GROUP BY Product;
+
