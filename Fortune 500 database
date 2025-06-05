@@ -55,3 +55,28 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+~ In this SQL i'm retrieving data about customers and their order using a database that has multiple tables
+
+    1- How many products were sold in January?
+    
+SELECT COUNT (orderID)
+FROM JanSales
+WHERE lenght (orderID)=6
+ AND orderID <>'order id';
+
+    2-How many of those orders were an iPhone?
+    
+SELECT COUNT(orderid)
+FROM JanSales
+WHERE product= iPhone
+AND lenght(orderid)= 6
+AND orderid <> 'orderid';
+
+ 3-Select the customer account numbers for all the orders that were placed in February.
+ 
+SELECT distinct acctnum
+FROM customers
+INNER JOIN FebSales
+ON customers.order_id=FebSales.orderID;
+
