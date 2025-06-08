@@ -1,3 +1,6 @@
+#In this SQL, I'm querying a database with multiple tables in it to find information about customers, their order,employees at the company
+and information about music album
+
 1- Show Customers who are not in the US 
 
 SELECT FirstName,LastName, CustomerID,Country
