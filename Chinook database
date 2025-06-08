@@ -1,4 +1,4 @@
-1- 
+1- Show Customers who are not in the US
 SELECT FirstName,LastName, CustomerID,Country
 FROM customers 
 WHERE Country <> 'USA';
