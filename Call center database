@@ -1308,13 +1308,15 @@ WHERE CAST(REPLACE(Service_Level_20Seconds,'%','')AS REAL) <'20.00%'
 ORDER BY Service_Level_20Seconds ASC
 LIMIT 20;
 
-#Top 5 agent with the highest service level
+#Top 5 agent with the highest service level.
 SELECT Agent_ID,CAST(REPLACE(Service_Level_20Seconds,'%','')AS REAL) AS Service_Level_20Seconds
 FROM call_centerr
 ORDER BY Service_Level_20Seconds desc 
 Limit 5;
 
-#
+#Assign the agents with service level 80% or higher as "Top agent" and the agents with service level between 60%-79.99% 
+as "Need improvement" and agents with service level lower than 50% as "Low perfomance".
+
 SELECT Agent_ID,Service_Level_20Seconds,
 CASE WHEN Service_Level_20Seconds >='80.00%' THEN "Top agent"
 WHEN Service_Level_20Seconds = '100.00%' THEN "Top agent"
@@ -1323,6 +1325,84 @@ WHEN Service_Level_20Seconds< '50.00%' THEN "Low perfomance "
 ELSE "unknown"
 END AS "perfomance"
 FROM call_centerr; 
+
+#Which agents talk the longest time
+SELECT Agent_ID, Talk_Duration 
+FROM call_centerr
+ORDER BY Talk_Duration DESC
+LIMIT 1;
+
+#Identify the agents with the highest abandonment rate
+SELECT Agent_ID, 
+Incoming_Calls,
+Answered_Calls,
+Abandoned_Calls,
+ROUND( (Abandoned_Calls *1.0/Incoming_calls) *100,2)AS Abandonment_Rate,
+Service_Level_20Seconds
+FROM call_centerr
+ORDER BY Abandonment_Rate desc;
+
+#What is the overall answer rate for the company?
+SELECT SUM (Answered_Calls),
+SUM (Incoming_Calls),
+ROUND ((SUM (Answered_Calls) *1.0 / SUM(Incoming_Calls)) *100,2) AS Answer_Rate
+FROM call_centerr;
+
+#Finding the agent with the answer rate below target (85%)
+SELECT Agent_ID,
+ROUND ((SUM(Answered_Calls)*1.0/SUM(Incoming_Calls))*100,2)AS Answer_Rate
+FROM call_centerr
+GROUP BY Agent_ID
+HAVING Answer_Rate <'85.00'
+ORDER BY Answer_Rate asc
+LIMIT 125;
+
+#Identify the agent who handled the most calls?
+SELECT Agent_ID,
+Incoming_Calls,
+Answered_Calls,
+(Incoming_Calls + Answered_Calls) AS Total_Handled
+FROM call_centerr
+ORDER BY Total_Handled desc
+LIMIT 1;
+
+#Finding the agent with the lowest talk duration by converting into seconds
+SELECT Agent_ID,
+Talk_Duration,
+Abandoned_Calls,
+Service_Level_20seconds,
+--Manual conversion of hh:mm:ss to seconds
+(SUBSTR(Talk_Duration,1,2)*3600 +
+SUBSTR(Talk_Duration,4,2)*60 +
+SUBSTR(Talk_Duration,7,2)) AS Talk_Seconds
+FROM call_centerr
+WHERE 
+(SUBSTR(Talk_Duration,1,2)*3600 +
+SUBSTR(Talk_Duration,4,2)*60 +
+SUBSTR(Talk_Duration,7,2))<60 
+AND (Abandoned_Calls>20 or Service_Level_20Seconds<80)
+ORDER BY Talk_Duration ASC;
+
+#Top 5 agent with the lowest waiting time and how does it impact service level
+SELECT Agent_ID,
+Incoming_Calls,
+Answered_Calls,
+Waiting_Time,
+Answer_Speed,
+Service_Level_20Seconds
+FROM call_centerr
+ORDER BY Waiting_Time asc
+LIMIT 5;
+
+#Top 10 quickest agent to answer calls
+SELECT Agent_ID,
+Answer_Speed,
+ROUND ((Answered_Calls*1.0/Incoming_Calls)*100,2) AS Answer_Rate
+FROM call_centerr
+ORDER BY Answer_Speed asc
+LIMIT 10;
+
+
 
 
 
