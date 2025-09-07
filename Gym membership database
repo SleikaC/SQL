@@ -104,7 +104,36 @@ Business Insight: The gender breakdown shows that females represent a slightly h
 should ensure that women's facilities (locker room,showers and rest areas are maintained to a high standard and also expand amenities
 such as hair dryers, extra towels and wellness products
 
-#
+#What is the busiest check in time
 
+SELECT strftime ('%H',avg_time_check_in) AS checkin_hours, COUNT (*) AS total_visits
+FROM gym
+WHERE avg_time_check_in IS NOT NULL
+GROUP BY checkin_hours
+ORDER BY total_visits DESC;
+
+Since my check in values are in 12-hour time with AM/PM SQL can't run it because SQLite's strftime only understands 24-hour times so to 
+fix it i run this version instead
+
+SELECT 
+CASE WHEN UPPER(SUBSTR(avg_time_check_in,-2))='AM' THEN
+CASE WHEN CAST (SUBSTR(avg_time_check_in,1,INSTR(avg_time_check_in,':')-1)AS INTEGER)=12
+THEN 0
+ELSE CAST (SUBSTR(avg_time_check_in,1,INSTR(avg_time_check_in,':')-1) AS INTEGER)
+END
+ELSE--PM 
+CASE WHEN CAST(SUBSTR(avg_time_check_in,1,INSTR(avg_time_check_in,':')-1)AS INTEGER)=12
+THEN 12
+ELSE CAST (SUBSTR(avg_time_check_in,1,INSTR(avg_time_check_in,':')-1)AS INTEGER)+12
+END
+END AS checkin_hour,
+COUNT (*) AS total_visits
+FROM gym
+WHERE avg_time_check_in IS NOT NULL
+GROUP BY checkin_hour
+ORDER BY total_visits DESC;
+
+Business Insight: 10 am is the busiest time so the gym should allocate staff more effectively by scheduling extra trainers and extending
+front desk staff during those time to spread out usage and reduce overcrowding 
 
 
