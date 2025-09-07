@@ -1,1 +1,42 @@
-#For this d
+#In this SQL i'm retrieving information about a gym dataset to improve members experience and increase gym revenue
+
+1- In which months are most members born?
+
+SELECT
+CAST(substr(birthday, 1, instr(birthday,'/')-1) AS INTEGER) AS birth_month,
+COUNT(*) AS total_members
+FROM gym
+WHERE birthday IS NOT NULL AND birthday <> ''
+GROUP BY birth_month
+ORDER BY total_members DESC;
+
+ Business Insight: During popular birthday months the gym could run "special discounts, promotions" to increase engagement and retention
+
+2- Which trainer are most in demand?
+
+SELECT trainer_name, COUNT(*) AS total_clients
+FROM gym
+WHERE trainer_name != '0'
+GROUP BY trainer_name
+ORDER BY total_clients desc;
+
+Business insight: Trainer with the most clients could be recognize as a star trainer in marketing campaigns or have him train new staff 
+
+3- Find the Most ordered drinks
+
+SELECT fav_drink, COUNT(*) AS total_members
+FROM gym
+WHERE fav_drink !='0'
+GROUP BY fav_drink
+HAVING total_members >10
+ORDER BY total_members desc;
+
+Business Insight: Stock more of the 3 most popular drinks
+
+4- 
+
+SELECT MIN(age) AS youngest,MAX(AGE) AS oldest
+ FROM gym;
+
+
+
