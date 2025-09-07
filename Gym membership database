@@ -1,6 +1,6 @@
 #In this SQL i'm retrieving information about a gym dataset to improve members experience and increase gym revenue
 
-1- In which months are most members born?
+# In which months are most members born?
 
 SELECT
 CAST(substr(birthday, 1, instr(birthday,'/')-1) AS INTEGER) AS birth_month,
@@ -10,9 +10,10 @@ WHERE birthday IS NOT NULL AND birthday <> ''
 GROUP BY birth_month
 ORDER BY total_members DESC;
 
- Business Insight: During popular birthday months the gym could run "special discounts, promotions" to increase engagement and retention
+ Business Insight: March and July are the popular birthday months the gym could run "special discounts, promotions" to increase engagement
+ and retention
 
-2- Which trainer are most in demand?
+# Which trainer are most in demand?
 
 SELECT trainer_name, COUNT(*) AS total_clients
 FROM gym
@@ -20,9 +21,10 @@ WHERE trainer_name != '0'
 GROUP BY trainer_name
 ORDER BY total_clients desc;
 
-Business insight: Trainer with the most clients could be recognize as a star trainer in marketing campaigns or have him train new staff 
+Business insight: Trainer with the most clients is Chantal, this trainer could be recognize as a star trainer in marketing campaigns 
+or have her train new trainers to replicate her methods and also balance clients loads by promoting other trainers to avoid burnout 
 
-3- Find the Most ordered drinks
+# Find the Most ordered drinks
 
 SELECT fav_drink, COUNT(*) AS total_members
 FROM gym
@@ -33,10 +35,76 @@ ORDER BY total_members desc;
 
 Business Insight: Stock more of the 3 most popular drinks
 
-4- 
+# Identify the youngest and oldest member 
 
 SELECT MIN(age) AS youngest,MAX(AGE) AS oldest
- FROM gym;
+FROM gym;
+
+Business Insight: The youngest member in the gym is 12 years old while the oldest is 49 years old, this shows a wide age diversity. 
+Marketing campaigns could highlight this diversity by positioning the gym as family-friendly 
+
+# Most popular group lessons
+
+SELECT fav_group_lesson, COUNT (*)AS total_members
+FROM gym
+WHERE fav_group_lesson !='0'
+GROUP BY fav_group_lesson
+HAVING total_members>10;
+
+Business Insight: Yoga and BodyPump have the most members, the gym should schedule more sessions for these classes and feature them in ads
+
+# How many members use the sauna VS who's not
+
+SELECT uses_sauna, COUNT(*) AS total_members
+FROM gym
+GROUP BY uses_sauna;
+
+Business Insight: 493 members use the sauna which is a large portion but less than half so the gym should expand spa/wellness 
+amenities and also highlight sauna benefits in marketing or offer free trials to boost engagement 
+
+# Which group age use the sauna the most
+
+SELECT CASE
+WHEN CAST (age AS INTEGER) <30 THEN 'Under 30'
+WHEN CAST (age AS INTEGER) BETWEEN 30 AND 49 THEN '30-49'
+ELSE '50+'
+END AS age_group,
+COUNT(*) AS Sauna_users
+FROM gym
+WHERE uses_sauna ='TRUE'
+GROUP BY age_group;
+
+Business Insight: Sauna usage is higher among older members so the gym should expand wellness marketing and recovery sessions for older
+members 
+
+# Finding the age group with the most members
+
+SELECT 
+CASE
+WHEN CAST (age AS INTEGER) <20 THEN 'Teen'
+WHEN CAST (age AS INTEGER) BETWEEN 20 AND 29 THEN '20s'
+WHEN CAST (age AS INTEGER) BETWEEN 30 AND 39 THEN '30s'
+WHEN CAST (age AS INTEGER) BETWEEN 40 AND 49 THEN '40s'
+ELSE '50+'
+END AS age_group,
+COUNT(*)AS total_members
+FROM gym
+GROUP BY age_group;
+
+Business Insight: Most members are in their 20s so the gym should emphasize high-energy programs (CrossFit, HIIT) and an aesthetic that 
+attracts younger age for social media marketing
+
+#How many females is there in the gym
+
+SELECT COUNT(gender) AS gender
+FROM gym
+WHERE gender='Female';
+
+Business Insight: The gender breakdown shows that females represent a slightly higher proportion of the gym membership base so the gym
+should ensure that women's facilities (locker room,showers and rest areas are maintained to a high standard and also expand amenities
+such as hair dryers, extra towels and wellness products
+
+#
 
 
 
