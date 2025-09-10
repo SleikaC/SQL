@@ -1,0 +1,351 @@
+Customer_ID	Gender	Age	City	Membership_Type	Total_Spend	Items_Purchased	Average_Rating	Discount_Applied	Days_Since_Last_Purchase	Satisfaction_Level
+101	Female	29.00	New York	Gold	1120.20	14.00	4.60	TRUE	25.00	Satisfied
+102	Male	34.00	Los Angeles	Silver	780.50	11.00	4.10	FALSE	18.00	Neutral
+103	Female	43.00	Chicago	Bronze	510.75	9.00	3.40	TRUE	42.00	Unsatisfied
+104	Male	30.00	San Francisco	Gold	1480.30	19.00	4.70	FALSE	12.00	Satisfied
+105	Male	27.00	Miami	Silver	720.40	13.00	4.00	TRUE	55.00	Unsatisfied
+106	Female	37.00	Houston	Bronze	440.80	8.00	3.10	FALSE	22.00	Neutral
+107	Female	31.00	New York	Gold	1150.60	15.00	4.50	TRUE	28.00	Satisfied
+108	Male	35.00	Los Angeles	Silver	800.90	12.00	4.20	FALSE	14.00	Neutral
+109	Female	41.00	Chicago	Bronze	495.25	10.00	3.60	TRUE	40.00	Unsatisfied
+110	Male	28.00	San Francisco	Gold	1520.10	21.00	4.80	FALSE	9.00	Satisfied
+111	Male	32.00	Miami	Silver	690.30	11.00	3.80	TRUE	34.00	Unsatisfied
+112	Female	36.00	Houston	Bronze	470.50	7.00	3.20	FALSE	20.00	Neutral
+113	Female	30.00	New York	Gold	1200.80	16.00	4.30	TRUE	21.00	Satisfied
+114	Male	33.00	Los Angeles	Silver	820.75	13.00	4.40	FALSE	15.00	Satisfied
+115	Female	42.00	Chicago	Bronze	530.40	9.00	3.50	TRUE	38.00	Unsatisfied
+116	Male	29.00	San Francisco	Gold	1360.20	18.00	4.90	FALSE	11.00	Satisfied
+117	Male	26.00	Miami	Silver	700.60	12.00	3.70	TRUE	48.00	Unsatisfied
+118	Female	38.00	Houston	Bronze	450.90	8.00	3.00	FALSE	25.00	Neutral
+119	Female	32.00	New York	Gold	1170.30	14.00	4.70	TRUE	29.00	Satisfied
+120	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	16.00	Neutral
+121	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	41.00	Unsatisfied
+122	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+123	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+124	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+125	Female	31.00	New York	Gold	1140.60	15.00	4.60	TRUE	27.00	Satisfied
+126	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	13.00	Neutral
+127	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+128	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+129	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+130	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+131	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+132	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+133	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+134	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+135	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+136	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+137	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+138	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+139	Female	43.00	Chicago	Bronze	500.75	10.00	3.30	TRUE	40.00	Unsatisfied
+140	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	12.00	Satisfied
+141	Male	27.00	Miami	Silver	700.40	13.00	4.00	TRUE	53.00	Unsatisfied
+142	Female	37.00	Houston	Bronze	420.80	7.00	3.10	FALSE	21.00	Neutral
+143	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+144	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+145	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+146	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+147	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+148	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+149	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+150	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+151	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+152	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+153	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+154	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+155	Female	31.00	New York	Gold	1140.60	15.00	4.60	TRUE	27.00	Satisfied
+156	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	13.00	Neutral
+157	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+158	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+159	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+160	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+161	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+162	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+163	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+164	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+165	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+166	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+167	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+168	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+169	Female	43.00	Chicago	Bronze	500.75	10.00	3.30	TRUE	40.00	Unsatisfied
+170	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	12.00	Satisfied
+171	Male	27.00	Miami	Silver	700.40	13.00	4.00	TRUE	53.00	Unsatisfied
+172	Female	37.00	Houston	Bronze	420.80	7.00	3.10	FALSE	21.00	NULL
+173	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+174	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+175	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+176	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+177	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+178	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+179	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+180	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+181	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+182	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+183	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+184	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+185	Female	31.00	New York	Gold	1140.60	15.00	4.60	TRUE	27.00	Satisfied
+186	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	13.00	Neutral
+187	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+188	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+189	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+190	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+191	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+192	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+193	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+194	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+195	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+196	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+197	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+198	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+199	Female	43.00	Chicago	Bronze	500.75	10.00	3.30	TRUE	40.00	Unsatisfied
+200	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	12.00	Satisfied
+201	Male	27.00	Miami	Silver	700.40	13.00	4.00	TRUE	53.00	Unsatisfied
+202	Female	37.00	Houston	Bronze	420.80	7.00	3.10	FALSE	21.00	Neutral
+203	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+204	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+205	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+206	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+207	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+208	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+209	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+210	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+211	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+212	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+213	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+214	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+215	Female	31.00	New York	Gold	1140.60	15.00	4.60	TRUE	27.00	Satisfied
+216	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	13.00	Neutral
+217	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+218	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+219	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+220	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+221	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+222	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+223	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+224	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+225	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+226	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+227	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+228	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+229	Female	43.00	Chicago	Bronze	500.75	10.00	3.30	TRUE	40.00	Unsatisfied
+230	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	12.00	Satisfied
+231	Male	27.00	Miami	Silver	700.40	13.00	4.00	TRUE	53.00	Unsatisfied
+232	Female	37.00	Houston	Bronze	420.80	7.00	3.10	FALSE	21.00	Neutral
+233	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+234	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+235	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+236	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+237	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+238	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+239	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+240	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+241	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+242	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+243	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+244	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	
+245	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+246	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+247	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+248	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+249	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+250	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+251	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+252	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+253	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+254	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+255	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+256	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+257	Female	31.00	New York	Gold	1140.60	15.00	4.60	TRUE	27.00	Satisfied
+258	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	13.00	Neutral
+259	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+260	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+261	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+262	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+263	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+264	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+265	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+266	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+267	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+268	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+269	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+270	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+271	Female	43.00	Chicago	Bronze	500.75	10.00	3.30	TRUE	40.00	Unsatisfied
+272	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	12.00	Satisfied
+273	Male	27.00	Miami	Silver	700.40	13.00	4.00	TRUE	53.00	Unsatisfied
+274	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+275	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	27.00	Satisfied
+276	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	12.00	Neutral
+277	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	38.00	Unsatisfied
+278	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+279	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+280	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+281	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+282	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+283	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+284	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+285	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+286	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+287	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+288	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	13.00	Neutral
+289	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+290	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+291	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+292	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+293	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+294	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+295	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+296	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+297	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+298	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+299	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+300	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+301	Male	36.00	San Francisco	Gold	1420.80	19.00	4.60	FALSE	11.00	Satisfied
+302	Female	29.00	Miami	Silver	730.40	14.00	4.00	TRUE	50.00	Unsatisfied
+303	Female	35.00	Houston	Bronze	450.60	7.00	3.30	FALSE	21.00	Neutral
+304	Male	31.00	New York	Gold	1210.60	17.00	4.80	TRUE	18.00	Satisfied
+305	Male	27.00	Los Angeles	Silver	780.90	11.00	4.20	FALSE	16.00	Neutral
+306	Female	42.00	Chicago	Bronze	495.25	10.00	3.50	TRUE	35.00	Unsatisfied
+307	Male	29.00	San Francisco	Gold	1390.20	18.00	4.70	FALSE	9.00	Satisfied
+308	Male	26.00	Miami	Silver	670.60	12.00	3.90	TRUE	46.00	Unsatisfied
+309	Female	38.00	Houston	Bronze	460.90	8.00	3.20	FALSE	25.00	Neutral
+310	Female	32.00	New York	Gold	1170.30	14.00	4.50	TRUE	21.00	Satisfied
+311	Male	34.00	Los Angeles	Silver	810.20	11.00	4.00	FALSE	14.00	Neutral
+312	Female	43.00	Chicago	Bronze	515.75	9.00	3.30	TRUE	38.00	Unsatisfied
+313	Male	30.00	San Francisco	Gold	1450.50	20.00	4.80	FALSE	12.00	Satisfied
+314	Male	27.00	Miami	Silver	690.40	13.00	4.10	TRUE	52.00	Unsatisfied
+315	Female	37.00	Houston	Bronze	420.80	7.00	3.40	FALSE	24.00	Neutral
+316	Female	31.00	New York	Gold	1130.60	15.00	4.50	TRUE	26.00	Satisfied
+317	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	13.00	Neutral
+318	Female	41.00	Chicago	Bronze	480.25	9.00	3.60	TRUE	39.00	Unsatisfied
+319	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	9.00	Satisfied
+320	Male	32.00	Miami	Silver	680.30	10.00	3.80	TRUE	32.00	Unsatisfied
+321	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	18.00	Neutral
+322	Female	30.00	New York	Gold	1180.80	16.00	4.70	TRUE	19.00	Satisfied
+323	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+324	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	39.00	Unsatisfied
+325	Male	30.00	San Francisco	Gold	1470.50	20.00	4.80	FALSE	13.00	Satisfied
+326	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	54.00	Unsatisfied
+327	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	23.00	Neutral
+328	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	27.00	Satisfied
+329	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	13.00	Neutral
+330	Female	41.00	Chicago	Bronze	485.25	9.00	3.60	TRUE	39.00	Unsatisfied
+331	Male	28.00	San Francisco	Gold	1500.10	21.00	4.90	FALSE	10.00	Satisfied
+332	Male	32.00	Miami	Silver	670.30	10.00	3.80	TRUE	33.00	Unsatisfied
+333	Female	36.00	Houston	Bronze	460.50	8.00	3.10	FALSE	19.00	Neutral
+334	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	20.00	Satisfied
+335	Male	33.00	Los Angeles	Silver	830.75	13.00	4.20	FALSE	14.00	Satisfied
+336	Female	42.00	Chicago	Bronze	520.40	9.00	3.50	TRUE	37.00	Unsatisfied
+337	Male	29.00	San Francisco	Gold	1370.20	18.00	4.70	FALSE	10.00	Satisfied
+338	Male	26.00	Miami	Silver	690.60	12.00	3.90	TRUE	47.00	Unsatisfied
+339	Female	38.00	Houston	Bronze	440.90	8.00	3.20	FALSE	24.00	Neutral
+340	Female	32.00	New York	Gold	1160.30	14.00	4.40	TRUE	22.00	Satisfied
+341	Male	34.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	17.00	Neutral
+342	Female	43.00	Chicago	Bronze	525.75	9.00	3.30	TRUE	40.00	Unsatisfied
+343	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	11.00	Satisfied
+344	Male	27.00	Miami	Silver	720.40	13.00	4.00	TRUE	55.00	Unsatisfied
+345	Female	37.00	Houston	Bronze	440.80	7.00	3.20	FALSE	25.00	Neutral
+346	Female	31.00	New York	Gold	1150.60	15.00	4.50	TRUE	28.00	Satisfied
+347	Male	35.00	Los Angeles	Silver	830.90	12.00	4.30	FALSE	14.00	Neutral
+348	Female	41.00	Chicago	Bronze	490.25	9.00	3.60	TRUE	40.00	Unsatisfied
+349	Male	28.00	San Francisco	Gold	1480.10	21.00	4.90	FALSE	10.00	Satisfied
+350	Male	32.00	Miami	Silver	690.30	10.00	3.80	TRUE	34.00	Unsatisfied
+351	Female	36.00	Houston	Bronze	480.50	8.00	3.10	FALSE	20.00	Neutral
+352	Female	30.00	New York	Gold	1170.80	16.00	4.70	TRUE	21.00	Satisfied
+353	Male	34.00	Los Angeles	Silver	790.20	11.00	4.00	FALSE	15.00	Neutral
+354	Female	43.00	Chicago	Bronze	510.75	10.00	3.30	TRUE	41.00	Unsatisfied
+355	Male	30.00	San Francisco	Gold	1440.50	19.00	4.60	FALSE	12.00	Satisfied
+356	Male	27.00	Miami	Silver	700.40	13.00	4.10	TRUE	56.00	Unsatisfied
+357	Female	37.00	Houston	Bronze	410.80	7.00	3.40	FALSE	26.00	Neutral
+358	Female	31.00	New York	Gold	1160.60	15.00	4.50	TRUE	29.00	Satisfied
+359	Male	35.00	Los Angeles	Silver	810.90	12.00	4.30	FALSE	14.00	Neutral
+360	Female	41.00	Chicago	Bronze	495.25	9.00	3.60	TRUE	41.00	Unsatisfied
+361	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	10.00	Satisfied
+362	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	35.00	Unsatisfied
+363	Female	36.00	Houston	Bronze	430.50	8.00	3.10	FALSE	21.00	Neutral
+364	Female	30.00	New York	Gold	1200.80	16.00	4.70	TRUE	22.00	Satisfied
+365	Male	34.00	Los Angeles	Silver	780.20	11.00	4.10	FALSE	16.00	Neutral
+366	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	42.00	Unsatisfied
+367	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	13.00	Satisfied
+368	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	57.00	Unsatisfied
+369	Female	37.00	Houston	Bronze	450.80	7.00	3.40	FALSE	24.00	Neutral
+370	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	30.00	Satisfied
+371	Male	35.00	Los Angeles	Silver	800.90	12.00	4.10	FALSE	17.00	Neutral
+372	Female	41.00	Chicago	Bronze	475.25	9.00	3.60	TRUE	42.00	Unsatisfied
+373	Male	28.00	San Francisco	Gold	1480.10	21.00	4.90	FALSE	11.00	Satisfied
+374	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	36.00	Unsatisfied
+375	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	22.00	Neutral
+376	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	23.00	Satisfied
+377	Male	33.00	Los Angeles	Silver	770.20	11.00	4.20	FALSE	18.00	Neutral
+378	Female	43.00	Chicago	Bronze	515.75	10.00	3.30	TRUE	43.00	Unsatisfied
+379	Male	30.00	San Francisco	Gold	1450.50	19.00	4.60	FALSE	12.00	Satisfied
+380	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	58.00	Unsatisfied
+381	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	27.00	Neutral
+382	Female	31.00	New York	Gold	1160.60	15.00	4.50	TRUE	31.00	Satisfied
+383	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	15.00	Neutral
+384	Female	41.00	Chicago	Bronze	495.25	9.00	3.60	TRUE	43.00	Unsatisfied
+385	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	10.00	Satisfied
+386	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	37.00	Unsatisfied
+387	Female	36.00	Houston	Bronze	440.50	8.00	3.10	FALSE	23.00	Neutral
+388	Female	30.00	New York	Gold	1200.80	16.00	4.70	TRUE	24.00	Satisfied
+389	Male	34.00	Los Angeles	Silver	780.20	11.00	4.10	FALSE	16.00	Neutral
+390	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	44.00	Unsatisfied
+391	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	13.00	Satisfied
+392	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	59.00	Unsatisfied
+393	Female	37.00	Houston	Bronze	450.80	7.00	3.40	FALSE	28.00	Neutral
+394	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	32.00	Satisfied
+395	Male	35.00	Los Angeles	Silver	800.90	12.00	4.10	FALSE	17.00	Neutral
+396	Female	41.00	Chicago	Bronze	475.25	9.00	3.60	TRUE	44.00	Unsatisfied
+397	Male	28.00	San Francisco	Gold	1480.10	21.00	4.90	FALSE	12.00	Satisfied
+398	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	38.00	Unsatisfied
+399	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	22.00	Neutral
+400	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	25.00	Satisfied
+401	Male	33.00	Los Angeles	Silver	800.20	11.00	4.10	FALSE	18.00	Neutral
+402	Female	43.00	Chicago	Bronze	515.75	10.00	3.30	TRUE	45.00	Unsatisfied
+403	Male	30.00	San Francisco	Gold	1450.50	19.00	4.60	FALSE	13.00	Satisfied
+404	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	60.00	Unsatisfied
+405	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	29.00	Neutral
+406	Female	31.00	New York	Gold	1160.60	15.00	4.50	TRUE	33.00	Satisfied
+407	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	16.00	Neutral
+408	Female	41.00	Chicago	Bronze	495.25	9.00	3.60	TRUE	45.00	Unsatisfied
+409	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	11.00	Satisfied
+410	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	39.00	Unsatisfied
+411	Female	36.00	Houston	Bronze	440.50	8.00	3.10	FALSE	24.00	Neutral
+412	Female	30.00	New York	Gold	1200.80	16.00	4.70	TRUE	25.00	Satisfied
+413	Male	34.00	Los Angeles	Silver	780.20	11.00	4.10	FALSE	17.00	Neutral
+414	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	46.00	Unsatisfied
+415	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	14.00	Satisfied
+416	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	61.00	Unsatisfied
+417	Female	37.00	Houston	Bronze	450.80	7.00	3.40	FALSE	30.00	Neutral
+418	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	34.00	Satisfied
+419	Male	35.00	Los Angeles	Silver	800.90	12.00	4.10	FALSE	19.00	Neutral
+420	Female	41.00	Chicago	Bronze	475.25	9.00	3.60	TRUE	46.00	Unsatisfied
+421	Male	28.00	San Francisco	Gold	1480.10	21.00	4.90	FALSE	12.00	Satisfied
+422	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	40.00	Unsatisfied
+423	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	26.00	Neutral
+424	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	27.00	Satisfied
+425	Male	34.00	Los Angeles	Silver	780.20	11.00	4.20	FALSE	18.00	Neutral
+426	Female	43.00	Chicago	Bronze	515.75	10.00	3.30	TRUE	47.00	Unsatisfied
+427	Male	30.00	San Francisco	Gold	1450.50	19.00	4.60	FALSE	14.00	Satisfied
+428	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	62.00	Unsatisfied
+429	Female	37.00	Houston	Bronze	430.80	7.00	3.40	FALSE	31.00	Neutral
+430	Female	31.00	New York	Gold	1160.60	15.00	4.50	TRUE	35.00	Satisfied
+431	Male	35.00	Los Angeles	Silver	820.90	12.00	4.30	FALSE	20.00	Neutral
+432	Female	41.00	Chicago	Bronze	495.25	9.00	3.60	TRUE	47.00	Unsatisfied
+433	Male	28.00	San Francisco	Gold	1490.10	21.00	4.90	FALSE	11.00	Satisfied
+434	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	41.00	Unsatisfied
+435	Female	36.00	Houston	Bronze	440.50	8.00	3.10	FALSE	28.00	Neutral
+436	Female	30.00	New York	Gold	1200.80	16.00	4.70	TRUE	28.00	Satisfied
+437	Male	34.00	Los Angeles	Silver	780.20	11.00	4.10	FALSE	19.00	Neutral
+438	Female	43.00	Chicago	Bronze	505.75	10.00	3.30	TRUE	48.00	Unsatisfied
+439	Male	30.00	San Francisco	Gold	1460.50	20.00	4.80	FALSE	15.00	Satisfied
+440	Male	27.00	Miami	Silver	710.40	13.00	4.10	TRUE	63.00	Unsatisfied
+441	Female	37.00	Houston	Bronze	450.80	7.00	3.40	FALSE	32.00	Neutral
+442	Female	31.00	New York	Gold	1140.60	15.00	4.50	TRUE	36.00	Satisfied
+443	Male	35.00	Los Angeles	Silver	800.90	12.00	4.10	FALSE	20.00	Neutral
+444	Female	41.00	Chicago	Bronze	475.25	9.00	3.60	TRUE	48.00	Unsatisfied
+445	Male	28.00	San Francisco	Gold	1480.10	21.00	4.90	FALSE	13.00	Satisfied
+446	Male	32.00	Miami	Silver	660.30	10.00	3.80	TRUE	42.00	Unsatisfied
+447	Female	36.00	Houston	Bronze	470.50	8.00	3.00	FALSE	27.00	Neutral
+448	Female	30.00	New York	Gold	1190.80	16.00	4.50	TRUE	28.00	Satisfied
+449	Male	34.00	Los Angeles	Silver	780.20	11.00	4.20	FALSE	21.00	Neutral
+450	Female	43.00	Chicago	Bronze	515.75	10.00	3.30	TRUE	49.00	Unsatisfied
