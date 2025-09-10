@@ -1,0 +1,57 @@
+This project explores customer purchasing behavior to uncover business insights that can drive smarter decisions
+
+#Which membership type delivers the best ROI (spend per item)?
+
+SELECT Membership_Type,
+ROUND(SUM(Total_Spend)*1.0/SUM(Items_Purchased),2.0) AS spend_per_item
+FROM ecom
+GROUP BY Membership_Type
+ORDER BY spend_per_item DESC;
+
+Business Insight: Gold members deliver the highest ROI per purchase even with fewer customers so leadership should prioritize 
+retention campaigns for Gold members and upsell strategies for Silver customers who are close behind
+
+#Which factors predicts satisfaction the best?
+
+SELECT Satisfaction_Level,
+AVG (Total_Spend) AS AVG_Spend,
+AVG(Items_Purchased) AS AVG_Purchased,
+AVG(Average_Rating)AS AVG_Rating,
+AVG(Days_Since_Last_Purchase)AS AVG_Days_Gap
+FROM ecom
+GROUP BY Satisfaction_Level;
+
+Business Insight: Satisfied customers spend more, purchase more often and leave higher ratings so keeping them satisfied should be a 
+top priority and for those who aren't as satisfied, a quicm follow-up, better support or a personalized offer could turn them around 
+and boost revenue 
+
+# Finding the customers who aren't satisfied but spend more
+
+SELECT Customer_ID, Membership_Type,Total_Spend,Satisfaction_Level
+FROM ecom 
+WHERE Satisfaction_Level='Unsatisfied'
+AND Total_Spend > (SELECT AVG(Total_Spend) AS Avg_Spend 
+FROM ecom)
+ORDER BY Total_Spend DESC;
+
+Business Insight: Some of the biggest spenders are unsatisfied so losing these customers would hurt revenue so treat them like VIPs: 
+reacg out personally, offer tailored perks and show them they're valued.
+
+#Customers with Gold membership
+
+SELECT Customer_ID, Membership_Type
+FROM ecom
+WHERE Membership_Type = 'Gold';
+
+
+#How many members each membership has?
+
+SELECT COUNT (Membership_type)
+FROM ecom
+GROUP BY Membership_type;
+
+Business Insight: Mmebership distribution is almost evenly split so prioritize strategies to retain Gold members with exclusive perks
+and priority service, to encourage Silver members upgrades to Gold with clear added value and keep Bronze members engage with small
+wins(discounts,loyalty points)
+
+#
