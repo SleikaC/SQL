@@ -43,8 +43,7 @@ SELECT Customer_ID, Membership_Type
 FROM ecom
 WHERE Membership_Type = 'Gold';
 
-
-#How many members each membership has?
+#Mmebership distribution
 
 SELECT COUNT (Membership_type)
 FROM ecom
@@ -54,4 +53,43 @@ Business Insight: Mmebership distribution is almost evenly split so prioritize s
 and priority service, to encourage Silver members upgrades to Gold with clear added value and keep Bronze members engage with small
 wins(discounts,loyalty points)
 
-#
+#Who are the top 5 customers in each city by spending?
+
+SELECT Customer_ID, City,Total_Spend
+FROM (SELECT Customer_ID, City,Total_Spend,
+ROW_NUMBER()OVER(PARTITION BY City
+ORDER BY Total_Spend DESC) AS rank_in_city
+FROM ecom)
+WHERE rank_in_city<=5;
+
+Business Insight: Customers in San Francisco are top priorities but leadership should also focus on increasing campaigns in chicago 
+for more growth
+
+#What's the total revenue for the top 5 cities?
+
+SELECT City, SUM(Total_Spend)AS Total_Revenue
+FROM ecom
+GROUP BY City
+ORDER BY Total_Revenue DESC
+LIMIT 5;
+
+#Which customers increased spending because of discounts?
+
+SELECT Customer_ID, 
+SUM (CASE WHEN Discount_Applied='TRUE' THEN Total_Spend ELSE 0 END) AS Spend_With_Discount,
+SUM(CASE WHEN Discount_Applied= 'FALSE' THEN Total_Spend ELSE 0 END) AS Spend_Without_Discount
+FROM ecom
+GROUP BY Customer_ID
+HAVING Spend_With_Discount>Spend_Without_Discount;
+
+
+#Age distribution
+
+SELECT MIN(Age)
+FROM ecom;
+
+SELECT MAX(Age)
+FROM ecom;
+
+Business Insight: Given that our core customer base is between 26 and 43, expanding promotions on household products could drive both 
+loyalty and sales.
