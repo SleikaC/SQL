@@ -1,1 +1,147 @@
+#In this project, I used SQL queries to explore a healthcare dataset and uncover where money is being spent, which treatments are most
+effective and how hospitals can improve efficiency.
+
+#Which admission type cost the most
+
+SELECT DISTINCT
+Admission_Type,
+ROUND(AVG(Billing_Amount) OVER (PARTITION BY Admission_Type), 2) AS Avg_Cost,
+ROUND(SUM(Billing_Amount) OVER (PARTITION BY Admission_Type), 2) AS Total_Cost
+FROM healthcare_data
+ORDER BY Total_Cost DESC;
+
+Business Insight: Elective admission generate the highest total cost so this shows that while emergency admission drive immediate 
+demand, planned elective procedures collectively lead in revenue 
+
+#What are the Top 5 rooms by revenue and average patient stay?
+
+WITH room_summary AS
+(SELECT Room_Number,
+COUNT(*) AS admissions,
+ROUND(AVG(JULIANDAY(Discharge_Date) - JULIANDAY(Date_of_Admission)),2) AS avg_stay,
+SUM(Billing_Amount) AS total_revenue
+FROM healthcare_data
+GROUP BY Room_Number)
+SELECT *
+FROM room_summary
+ORDER BY total_revenue DESC
+LIMIT 5;
+
+Business Insight: High-traffic rooms not only generate the most revenue but also highlight where hospitals should focus resources 
+and staffing
+
+#What are the most expensive medical conditions for each insurance provider to cover?
+
+SELECT Medical_Condition,
+Insurance_Provider,
+SUM (Billing_Amount )AS Total_Cost
+FROM healthcare_data
+GROUP BY Insurance_Provider,Medical_Condition
+ORDER BY insurance_Provider,Total_Cost DESC;
+
+Business Insight: Obesity is the most costly condition for Blue Cross, While Medicare spend the most on diabetic patients.
+This highlights how different insurance providers face distinct cost burdens depending on the conditions they cover, which can 
+influence reimbursement strategies and risk management.
+
+#find the doctors who see the most diabetic patients
+
+SELECT Doctor,
+Medical_Condition,
+COUNT(*)AS Patients_Treated
+FROM healthcare_data
+WHERE Medical_Condition ='Diabetes'
+GROUP BY Doctor
+ORDER BY Patients_Treated DESC;
+
+Business Insight: Diabetes ranks among the Top 2 most costly medical conditions and doctors like Michael Smith and Christopher Brown
+treat the highest number of diabetic patients. This shows the financial and clinical importance of supporting physicians who 
+manage chronic conditions like diabetes, as their patient load directly drives hospital costs and outcomes
+
+
+#Identify the Top 10 doctors by revenue contribution across hospitals along with their patient volume
+SELECT 
+Doctor,
+Hospital,
+ROUND(SUM(Billing_Amount), 2) AS Total_Revenue,
+COUNT(*) AS Patients_Treated
+FROM healthcare_data
+GROUP BY Doctor, Hospital
+ORDER BY Total_Revenue DESC
+LIMIT 10;
+
+Business Insight: The top 10 doctors contribute over $100K each in revenue while treating a small patient group (2 patients each), 
+highlighting how high-cost cases can drive hospital revenue significantly 
+
+#What are the most common blood types across hospitals and what percent of the hospital population does it represent?
+
+SELECT 
+Hospital,
+Blood_type,
+COUNT(*) AS Patient_Count,
+ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (PARTITION BY Hospital), 2) AS Percent_of_Hospital
+FROM healthcare_data
+GROUP BY Hospital, Blood_type
+ORDER BY Hospital,Percent_of_Hospital DESC;
+
+Business Insight: Across all hospitals, A+  represents the largest share of patients. This highlights the need for hospitals to
+ensure adequate A+ blood supply for transfusions and emergency treatments. By prioritizing inventory management around A+, hospitals 
+can reduce shortages and improve patient outcomes.
+
+#Which medical condition  needs immediate attention (highest priority)?
+
+SELECT Name,
+Medical_Condition,
+CASE WHEN Admission_Type='Emergency' THEN 'Highest Priority'
+WHEN Admission_Type = 'Urgent' THEN 'Medium Priority'
+WHEN Admission_Type='Elective' THEN 'Low Prioriy'
+ELSE 'Other'
+END AS Level_of_need
+ FROM healthcare_data
+ WHERE Level_of_need ='Highest Priority';
+
+Business Insight: Patients with Obesity and Diabetes make up the largest share of highest-priority admissions, signaling that these 
+conditions require immediate attention and resources in emergency care planning.
+
+#Which medication is the most effective and what is the total cost?
+
+SELECT Medication,
+JULIANDAY(Discharge_Date)-JULIANDAY(Date_of_Admission) AS Length_of_stay,
+SUM(CASE WHEN Test_Results='Normal' THEN '1' ELSE 0 END)*100.0/COUNT(*) AS Success_Rate,
+ROUND(SUM(Billing_Amount))AS Total_Cost
+FROM healthcare_data
+GROUP BY Medication
+ORDER BY Success_Rate DESC ,Total_Cost DESC
+
+Business Insight: While Ibuprofen generates the highest total cost ($283M), Aspirin is slightly more effective with a success rate 
+of 33.68%. This highlights an important trade-off: hospitals are spending more on Ibuprofen, yet Aspirin delivers better outcomes at
+a marginally lower cost. Optimizing prescribing patterns could reduce costs while improving patient results.
+
+#How do patient outcomes and cost vary across different medications?
+
+SELECT Name,Medication,
+Discharge_Date,
+Date_of_Admission,
+JULIANDAY(Discharge_Date)-JULIANDAY(Date_of_Admission) AS Length_of_stay,
+Test_Results,
+Billing_Amount
+FROM healthcare_data;
+
+Business Insight: Patient-level data shows that both length of stay and test outcomes vary widely by medication which also directly 
+impact billing amounts
+
+#Which insurance provider covers the most and what is their average bill per patient?
+
+SELECT Insurance_Provider, 
+COUNT(Name) AS Number_of_patient,
+ROUND(SUM(CAST(Billing_Amount AS REAL))/COUNT(Name),2)AS Avg_bill_per_patient,
+ROUND(SUM(CAST(Billing_Amount AS REAL))* COUNT(Name),2) AS Total_Covered
+FROM healthcare_data
+GROUP BY Insurance_Provider
+ORDER BY Total_Covered DESC;
+
+Business Insight: Cigna covers the highest number of patients (11K+) with an average bill per patient of $25.5K. While Medicare
+and Blue Cross show slightly higher averages per patient, Cigna’s overall volume makes it the top contributor to healthcare coverage
+costs which signals that Cigna is a critical partner for hospitals when planning reimbursements and negotiating cost structures.
+
+
 
