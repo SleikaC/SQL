@@ -1,0 +1,118 @@
+#In this project, I used SQL queries to explore a pharmacy dataset and uncover how safety and pricing alignment drive better regulatory
+results in order to help pharmaceutical teams prioritize safer, more cost-effective drug formulations, reducing regulatory delays and
+maximizing ROl.
+
+#What's the average price by approval status?
+SELECT AVG(price_usd) AS avg_price, approval_status
+FROM drug_data
+GROUP BY approval_status;
+
+Insights : Approved drugs have the highest average price ($257.56), followed closely by pending drugs ($256.12), while rejected drugs 
+average significantly lower ($241.89). The small gap between approved and pending prices suggests that cost alone is not the 
+determining factor in approval decisions. However, the clear drop in price among rejected drugs indicates that lower-priced submissions
+may reflect lower investment or incomplete documentation, which can reduce approval chances.
+
+Business Impact: Pharmaceutical teams can use this insight to find a balanced pricing strategy, one that reflects product quality 
+without overpricing, ultimately improving approval odds while maintaining profitability.
+
+
+#Which decade achieved the highest drug approval success rate?
+SELECT (approval_year / 10) * 10 AS decade,
+COUNT(*) AS total_drugs,
+SUM(CASE WHEN LOWER(approval_status) = 'approved' THEN 1 ELSE 0 END) AS approved_drugs,
+ROUND(SUM(CASE WHEN LOWER(approval_status) = 'approved' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),2) AS approval_rate
+FROM drug_data
+WHERE approval_year IS NOT NULL
+GROUP BY decade
+ORDER BY decade desc;
+
+Insights: Over the past three decades, approval rates have remained relatively stable. The 2010s showed the strongest performance
+at 34.15%, which could point to better data standards or more efficient review processes. But I also noticed a dip in the 2020s down 
+to 31.28%, likely reflecting stricter regulations or post-pandemic slowdowns. 
+
+Business Impact: This insight can help pharmaceutical companies evaluate long-term regulatory performance, forecast approval 
+probabilities and adapt research strategies to meet evolving compliance expectations so investing in data-driven trial optimization, 
+and enhancing safety documentation can help recapture the higher success rates of the past decade which will lead to faster approval.
+
+#Which side effect categories are linked to higher or lower drug approval rates?
+SELECT side_effects,
+COUNT(*) AS total_drugs,
+ROUND(SUM(CASE WHEN LOWER(approval_status) = 'approved' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS approval_rate,
+CASE WHEN side_effect_severity='Mild' THEN 'Low Risk'
+WHEN side_effect_severity='Moderate' THEN 'Medium Risk'
+WHEN side_effect_severity='Severe' THEN 'High Risk'
+ELSE 'Unknown'
+END AS side_effect_category
+FROM drug_data
+GROUP BY side_effect_category
+ORDER BY approval_rate DESC;
+
+Insights: Low risk drugs had the highest approval rate at 35.7%, while those labeled Medium to high risk dropped to around 30%. 
+This pattern shows that side effects severity plays a major role in how regulatory bodies evaluate drug safety and market readiness.
+
+Business Impact: Pharmaceutical teams should prioritize investment in compounds with lower side-effect severity, even if it increases 
+initial testing costs. Reducing risk profiles during clinical trials could raise approval probability by up to 5%, translating to 
+faster product launches and stronger long-term profitability. Additionally, marketing and pricing strategies should emphasize safety 
+to build patient and physician trust.
+
+#What is the average lifespan of approved drugs before expiration?
+SELECT ROUND(AVG(JULIANDAY(date(expiry_date))
+- JULIANDAY(date(approval_year || '-01-01'))
+)) AS avg_days_diff,
+ROUND(AVG((JULIANDAY(date(expiry_date)) 
+- JULIANDAY(date(approval_year || '-01-01'))) / 365.25), 2) AS avg_years_diff
+FROM drug_data
+WHERE expiry_date IS NOT NULL 
+AND approval_year IS NOT NULL;
+
+Insights: On average, drugs remain active in the market for 20.25 years between their approval and expiry dates. This long lifespan
+highlights a stable return window for manufacturers but it also signals potential gaps in innovation turnover and patent renewal
+strategy.
+
+Business Impact: This insight should be used to to strategically plan R&D pipelines around the 20-year mark. As patents approach
+expiration, firms can prepare next-generation formulations or generic alternatives to maintain market share. Additionally, 
+monitoring drugs with shorter lifespans can help identify early signs of declining safety performance or competitive pressure, 
+enabling proactive portfolio management.
+
+#Does drug dosage level influence approval outcomes?
+SELECT dosage_stage,approval_status,COUNT(*) AS total_drug,ROUND(COUNT(*)*100.0/SUM(COUNT(*))OVER (PARTITION BY dosage_stage),2) AS perc_in_stage
+FROM(
+SELECT CASE WHEN CAST (dosage_mg AS INT) >850 THEN 'high_dosage'
+ELSE 'normal_dosage' END AS dosage_stage,
+CAST(dosage_mg AS INT),drug_name, approval_status
+FROM drug_data)
+GROUP BY dosage_stage,approval_status;
+
+Insights: The analysis shows that normal-dosage drugs make up the majority of submissions, with an average approval rate of 31.75%,
+while high-dosage drugs see a slightly higher success rate of 34.58%. This suggests that although higher doses may appear more 
+effective during trials, they also come with increased regulatory scrutiny and potential safety concerns that can impact overall
+approval outcomes.
+
+Business Impact: Pharmaceutical companies should aim to find the optimal dosage balance that demonstrates efficacy without triggering
+safety red flags. Before submission, high-dosage drugs should undergo additional safety testing and documentation to strengthen
+approval confidence. Focusing on moderate dosage formulations can help accelerate approval timelines, lower regulatory risk 
+and optimize R&D spending efficiency.
+
+#What is the earliest and latest approval year and how many drugs were approved per year?
+SELECT MIN (approval_year) AS ealiest_approval, 
+MAX(approval_year) AS latest_approval,
+COUNT(*) AS count_of_drug,
+ROW_NUMBER()OVER(ORDER BY COUNT(*)DESC)AS rank_position
+FROM drug_data
+GROUP BY approval_year;
+
+Insights: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
