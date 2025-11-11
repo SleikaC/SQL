@@ -106,11 +106,28 @@ such as 2004, 1997 and 1990 also reflect steady approval momentum. These standou
 or more efficient regulatory processes. It suggests that approval activity tends to rise in waves, often linked to new research 
 breakthroughs or industry-wide shifts in focus.
 
-
 Business Impact : Pharmaceutical teams can use this trend to understand what made certain years like 2006 and 2017 so successful,
 whether it was faster review timelines, stronger clinical evidence or innovation in key drug classes. Learning from those patterns 
 can help companies plan smarter R&D strategies, focus resources on high-success areas and ultimately increase their chances of faster
 drug approvals in the future. 
+
+#Which high-priced drugs are most associated with specific side effects and approval outcomes?
+SELECT drug_name,price_usd ,side_effects,approval_status
+FROM(
+SELECT price_usd, drug_name,approval_status,side_effects
+FROM drug_data
+GROUP BY drug_name
+ORDER BY price_usd DESC);
+
+Insights: The data shows that top-priced drugs such as Zyloparin35 ($499.06) and Rivaparin94 ($498.98) were both approved despite 
+having mild to moderate side effects like insomnia and rash, while other similarly priced drugs like Viraxetine59 and Daxozole99 were
+rejected due to more severe reactions such as blurred vision and constipation. This indicates that price alone doesn’t determine 
+approval success; the type and severity of side effects play a larger role in regulatory outcomes.
+
+Business Impact: Pharmaceutical firms should focus on balancing drug pricing with safety perception. High-cost drugs with tolerable
+side effects have a better chance of approval and market adoption. Companies could use this insight to prioritize clinical trials 
+that validate tolerability, communicate clear safety benefits to regulators and justify pricing through proven efficacy rather than 
+premium positioning alone.
 
 #Which drug administration routes are most commonly used?
 SELECT administration_route,
@@ -120,8 +137,47 @@ FROM drug_data
 WHERE administration_route IS NOT NULL
 GROUP BY administration_route;
 
-#Insights
+Insights: The data shows that intramuscular administration leads with 233 drugs, followed closely by oral (214) and inhalation (214)
+methods. These top three routes dominate overall usage, reflecting a balance between efficiency, patient compliance, and therapeutic 
+reach. Less common routes like rectal and sublingual remain specialized for niche treatments or rapid absorption needs.
 
+Business Impact: Pharmaceutical companies can use this insight to align R&D efforts with patient-preferred and clinically effective 
+administration methods. Expanding research into oral and inhalable formulations could boost accessibility and market adoption,
+while optimizing intramuscular products may enhance delivery efficiency and treatment consistency for critical therapies.
+
+#Which medical indication has the highest number of approved drugs?
+SELECT indications, COUNT(*) AS drug_count
+FROM (SELECT COUNT(*) AS drug_count,
+indications
+FROM drug_data
+WHERE indications IS NOT NULL
+GROUP BY indications) AS indication_count
+WHERE drug_count >3
+ORDER BY drug_count desc;
+
+Insights: The data reveals that Allergy Relief stands out with 10 approved drugs, making it the most frequently targeted medical
+indication in this dataset. This suggests a high research and production focus on allergy medications, likely due to consistent
+global demand and broad patient demographics.
+
+Business Impact : Pharmaceutical companies can capitalize on this trend by expanding innovation in allergy treatment such as 
+developing faster-acting or longer-lasting formulations. Since the market already shows strong approval activity, introducing 
+differentiated or over-the-counter alternatives could help capture consumer trust and increase market share in a proven therapeutic 
+category.
+
+#What is the overall market value and average price of drugs in the dataset?
+SELECT AVG(CAST(price_usd AS FLOAT)) AS avg_price,
+COUNT (DISTINCT drug_name) AS drug_count,
+AVG(CAST(price_usd AS FLOAT))* COUNT(*) AS total_estimate_value
+FROM drug_data;
+
+Insights: Across 1,337 drugs, the average price is approximately $251.84, generating a total estimated market value of about $361,649.
+This suggests a moderately priced portfolio overall, with enough variance to explore cost optimization and pricing strategies for 
+high-value drugs.
+
+Business Impact: With a total estimated market value exceeding $360K, this analysis highlights clear opportunities to optimize revenue
+through smarter pricing segmentation. Drugs priced near the $250 benchmark could be strategically repositioned, either premiumized 
+based on clinical performance or bundled with lower-cost alternatives to capture broader market share. These insights enable leaders
+to balance profitability with accessibility, aligning pricing decisions with both patient outcomes and business growth.
 
 
 
