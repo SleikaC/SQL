@@ -101,7 +101,26 @@ ROW_NUMBER()OVER(ORDER BY COUNT(*)DESC)AS rank_position
 FROM drug_data
 GROUP BY approval_year;
 
-Insights: 
+Insights: The data shows that 2006 led with 57 approved drugs, closely followed by 2017 with 56 approvals.Other high-performing years
+such as 2004, 1997 and 1990 also reflect steady approval momentum. These standout years likely reflect periods of strong innovation 
+or more efficient regulatory processes. It suggests that approval activity tends to rise in waves, often linked to new research 
+breakthroughs or industry-wide shifts in focus.
+
+
+Business Impact : Pharmaceutical teams can use this trend to understand what made certain years like 2006 and 2017 so successful,
+whether it was faster review timelines, stronger clinical evidence or innovation in key drug classes. Learning from those patterns 
+can help companies plan smarter R&D strategies, focus resources on high-success areas and ultimately increase their chances of faster
+drug approvals in the future. 
+
+#Which drug administration routes are most commonly used?
+SELECT administration_route,
+COUNT(*) AS count_of_drug,
+ROW_NUMBER()OVER(ORDER BY COUNT(*) DESC) AS rank_position
+FROM drug_data
+WHERE administration_route IS NOT NULL
+GROUP BY administration_route;
+
+#Insights
 
 
 
